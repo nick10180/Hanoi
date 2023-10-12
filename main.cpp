@@ -10,7 +10,7 @@ void initTower(stack<int>* pStack){
      * Input: Pointer to an int stack
      * Output: Void
      * Requires: std::list, std::stack
-     * Edited: 6:40 P.M 30-8-23 By Nicholas Pullara*/
+     * Edited: 4:20 P.M 12-10-23 By Nicholas Pullara*/
     int j = MAXHEIGHT;       //Size of ring to put on the stack
     for(int i = 0; i < MAXHEIGHT; i++){
         pStack->push(j);
