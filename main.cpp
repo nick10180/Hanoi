@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stack>
 #include <list>
-#define MAXHIGHT  5
+#define MAXHEIGHT 5
 
 using namespace std;
 
@@ -11,20 +11,24 @@ void initTower(stack<int>* pStack){
      * Output: Void
      * Requires: std::list, std::stack
      * Edited: 6:40 P.M 30-8-23 By Nicholas Pullara*/
-    int j = MAXHIGHT;       //Size of ring to put on the stack
-    for(int i = 0; i < MAXHIGHT; i++){
+    int j = MAXHEIGHT;       //Size of ring to put on the stack
+    for(int i = 0; i < MAXHEIGHT; i++){
         pStack->push(j);
         j--;
     }
 }
 
-void solveHanoi(int curring, int start, int alternate, int destination, const list<stack<int>*>& stacklist){
+void solveHanoi(int curring, stack<int>* start, stack<int>* destination,  stack<int>* alternate){
 
+    int temp;
     if (curring == 0 ){ return; }
 
-    solveHanoi(curring - 1, start, alternate, destination, stacklist);
-
-    solveHanoi(curring - 1, alternate, destination, start, stacklist);
+    solveHanoi(curring - 1, start, alternate, destination);
+    temp = start->top();
+    cout << temp << "\n";
+    start->pop();
+    destination->push(temp);
+    solveHanoi(curring - 1, alternate, destination, start);
 
 
 
@@ -32,16 +36,15 @@ void solveHanoi(int curring, int start, int alternate, int destination, const li
 int main() {
     stack<int> tower1, tower2, tower3;
 
-    list<stack<int>*> Hanoi {&tower1, &tower2, &tower3};
 
     initTower(&tower1);
 
-    solveHanoi(MAXHEIGHT, 0, 1, 2, Hanoi);
+    solveHanoi(MAXHEIGHT, &tower1, &tower3, &tower2);
 
-    while(!tower1.empty()){
-        int temp = tower1.top();
+    while(!tower3.empty()){
+        int temp = tower3.top();
         cout << temp << endl;
-        tower1.pop();
+        tower3.pop();
     }
     std::cout << "Hello, World!" << std::endl;
     return 0;
