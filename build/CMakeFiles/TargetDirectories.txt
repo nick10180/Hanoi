@@ -1,0 +1,3 @@
+/home/nick/Desktop/hanoi/Hanoi/build/CMakeFiles/rebuild_cache.dir
+/home/nick/Desktop/hanoi/Hanoi/build/CMakeFiles/edit_cache.dir
+/home/nick/Desktop/hanoi/Hanoi/build/CMakeFiles/Hanoi.dir

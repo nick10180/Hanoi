@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/nick/Desktop/hanoi/Hanoi/build",
+  "command": "/usr/bin/c++   -g -std=gnu++14 -o CMakeFiles/Hanoi.dir/main.cpp.o -c /home/nick/Desktop/hanoi/Hanoi/main.cpp",
+  "file": "/home/nick/Desktop/hanoi/Hanoi/main.cpp"
+}
+]
