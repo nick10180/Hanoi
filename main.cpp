@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void initTower(stack<int>* pStack, int MAXHEIGHT, int maxheight){
+void initTower(stack<int>* pStack, int MAXHEIGHT){
     /*Function to initialize a stack as the first tower in the Tower of Hanoi problem.
      * Input: Pointer to an int stack, int MAXHEIGHT the size of Hanoi problem
      * Output: Void
@@ -16,7 +16,7 @@ void initTower(stack<int>* pStack, int MAXHEIGHT, int maxheight){
     }
 }
 
-void solveHanoi(int curring, stack<int>* start, stack<int>* destination,  stack<int>* alternate){
+void solveHanoi(int currentring, stack<int>* start, stack<int>* destination,  stack<int>* alternate){
     /*Function to solve the Tower of Hanoi problem.
      * Input: Int problem size, Pointer to start stack, destination stack, alternate stack
      * Output: Void
