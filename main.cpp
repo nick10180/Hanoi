@@ -9,8 +9,9 @@ void initTower(stack<int>* pStack, int MAXHEIGHT){
      * Output: Void
      * Requires: std::list, std::stack
      * Edited: 3:26 P.M 26-10-23 By Nicholas Pullara*/
-    int j = MAXHEIGHT;       //Size of ring to put on the stack
+    int j = MAXHEIGHT-1;       //Size of ring to put on the stack
     for(int i = 0; i < MAXHEIGHT; i++){
+        cout << i << "\n";
         pStack->push(j);
         j--;
     }
@@ -29,7 +30,7 @@ void solveHanoi(int currentring, stack<int>* start, stack<int>* destination,  st
     temp = start->top();
 
     //Uncomment me to see the steps! Warning: it's in address labels!
-    //    cout << temp << " to " << destination << "\n";
+        cout << temp << " to " << destination << "\n";
 
     start->pop();
     destination->push(temp);
@@ -38,7 +39,7 @@ void solveHanoi(int currentring, stack<int>* start, stack<int>* destination,  st
 }
 
 int main() {
-    const int problemsize = 5;
+
 
     stack<int> tower1, tower2, tower3;
     int MAXHEIGHT;
@@ -46,7 +47,7 @@ int main() {
     cin >> MAXHEIGHT;
     initTower(&tower1, MAXHEIGHT);
 
-    solveHanoi(problemsize, &tower1, &tower3, &tower2);
+    solveHanoi(MAXHEIGHT, &tower1, &tower3, &tower2);
 
     cout << "\n \n Tower 3:\n" ;
     while(!tower3.empty()){
