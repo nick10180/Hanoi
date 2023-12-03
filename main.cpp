@@ -23,6 +23,7 @@ void solveHanoi(int currentring, stack<int>* start, stack<int>* destination,  st
      * Output: Void
      * Requires: std::list, std::stack
      * Edited: 3:26 P.M 26-10-23 By Nicholas Pullara*/
+    //Solves in O(2^n) time.
     int temp;
     if (currentring == 0 ){ return; }
 
@@ -55,5 +56,7 @@ int main() {
         cout << temp << endl;
         tower3.pop();
     }
+    string a;
+    cin >> a;
     return 0;
 }
